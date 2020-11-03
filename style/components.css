@@ -1,3 +1,65 @@
+#editor > #draggable, #editor > #wrapper
+{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+#draggable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px #ffffff;
+	background-color: #FFFFFF;
+}
+
+#draggable::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: #FFFFFF;
+}
+
+#draggable::-webkit-scrollbar-thumb
+{
+	background-color: #707070;
+}
+
+
+#editor
+{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#draggable
+{
+    min-width: 350px;
+    border-right: 2px solid #707070;
+}
+
+#draggable > .draggableComponent
+{
+    min-height: 180px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 15px;
+    cursor: move;
+}
+
+#wrapper
+{
+    width: 100%;
+}
+
+.draggableMarker
+{
+    color: #707070;
+    border: 3px dashed  #707070;
+    border-left: 0 double  #707070;
+    padding: 10px 25px;
+    text-align: center;
+}
+
 .heading
 {
     min-height: 600px;
