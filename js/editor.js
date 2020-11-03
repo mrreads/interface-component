@@ -16,8 +16,8 @@ components.forEach(component =>
     {
         layout = `
         <div class="heading">
-            <h2> ${component['text']} </h2>
-            <p> ${component['post-text']} </p>
+            <h2 class="heading-text editable-text"> ${component['text']} </h2>
+            <p class="heading-post-text editable-text"> ${component['post-text']} </p>
             
             <div class="backing"></div>
             <img src="${component['image-src']}">
@@ -50,3 +50,22 @@ function generateElement(type, elem)
 {
     console.log(type, elem);
 }
+
+
+document.addEventListener('click', (e) => 
+{
+    if (e.target.contentEditable != 'true' && currentEditableElement)
+        currentEditableElement.contentEditable = false;
+}); 
+
+
+
+let currentEditableElement;
+document.querySelectorAll('.editable-text').forEach(element => 
+{
+    element.addEventListener('dblclick', eventRename =>
+    {
+        currentEditableElement = element;
+        element.contentEditable = true;
+    }) 
+});

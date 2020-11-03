@@ -1,19 +1,20 @@
 #editor > #draggable, #editor > #wrapper
 {
-    overflow: scroll;
-    overflow-x: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
 }
 
 
 #draggable::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px #ffffff;
 	background-color: #FFFFFF;
+	-webkit-box-shadow: inset 0 0 6px #FFFFFF;
 }
 
 #draggable::-webkit-scrollbar
 {
 	width: 3px;
+
 	background-color: #FFFFFF;
 }
 
@@ -25,99 +26,121 @@
 
 #editor
 {
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
+	display: flex;
+	flex-flow: row nowrap;
+
+	height: 100%;
 }
 
 #draggable
 {
-    min-width: 350px;
-    border-right: 2px solid #707070;
+	min-width: 350px;
+
+	border-right: 2px solid #707070;
 }
 
 #draggable > .draggableComponent
 {
-    min-height: 180px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 15px;
-    cursor: move;
+	min-height: 180px;
+	margin: 15px;
+
+	cursor: move;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
 
 #wrapper
 {
-    width: 100%;
+	width: 100%;
 }
 
 .draggableMarker
 {
-    color: #707070;
-    border: 3px dashed  #707070;
-    border-left: 0 double  #707070;
-    padding: 10px 25px;
-    text-align: center;
+	padding: 10px 25px;
+
+	text-align: center;
+
+	color: #707070;
+	border: 3px dashed  #707070;
+	border-left: 0 double  #707070;
 }
 
 .heading
 {
-    min-height: 600px;
-    width: 100%;
-    position: relative;
+	position: relative;
 
-    color: #FFFFFF;
-    text-align: center;
+	display: flex;
+	align-items: center;
+	flex-flow: column nowrap;
+	justify-content: center;
 
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 50px;
+	width: 100%;
+	min-height: 600px;
+	padding: 25px 50px;
+
+	text-align: center;
+
+	color: #FFFFFF;
 }
 
 .heading > img
 {
-    z-index: -2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	z-index: -2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
 }
 
 .heading > .backing
 {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    opacity: 0.6;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.6;
+	background-color: #000000;
 }
 
-.heading > h2
+.heading > .heading-text
 {
-    font-size: 7vmin;
-    margin-bottom: 15px;
+	font-size: 7vmin;
+
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 5px 15px;
 }
 
-.heading > p
+.heading > .heading-post-text
 {
-    font-size: 2vmin;
+	font-size: 2vmin;
+
+	padding: 5px 15px;
 }
 
 @media screen and (max-width: 768px)
 {
-    .heading > h2
-{
-    font-size: 8vw;
+	.heading > .heading-text
+	{
+		font-size: 8vw;
+	}
+
+	.heading > .heading-post-text
+	{
+		font-size: 4vw;
+	}
 }
 
-.heading > p
+h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[contentEditable=true]
 {
-    font-size: 4vw;
-}
+	border: 3px dashed  #707070;
+	outline: 0;
 }
