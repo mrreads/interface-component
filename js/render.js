@@ -15,8 +15,8 @@ components.forEach(component =>
     {
         layout = `
         <div class="heading">
-            <h2> ${component['text']} </h2>
-            <p> ${component['post-text']} </p>
+            <h2 class="heading-text"> ${component['text']} </h2>
+            <p class="heading-post-text"> ${component['post-text']} </p>
             
             <div class="backing"></div>
             <img src="${component['image-src']}">

@@ -20,13 +20,18 @@ components.forEach(component =>
     if (component['name'] === 'heading')
     {
         layout = `
-        <div class="heading">
+        <section class="component heading">
             <h2 class="heading-text editable-text"> ${component['text']} </h2>
             <p class="heading-post-text editable-text"> ${component['post-text']} </p>
             
             <div class="backing"></div>
             <img src="${component['image-src']}">
-        </div>
+
+            <div class="controls">
+                <div class="up" onclick="componentMoveUp(event)"> выше </div>
+                <div class="down" onclick="componentMoveDown(event)"> ниже </div>
+            </div>
+        </section>
 
         ${draggableMarket}
         `;
@@ -67,18 +72,45 @@ document.addEventListener('dblclick', (e) =>
     }
 });
 
+function swap(elem1, elem2) 
+{
+    const tempOne = elem2.nextElementSibling;
+    const tempTwo = elem2.parentNode;
+    elem1.replaceWith(elem2);
+    tempTwo.insertBefore(elem1, tempOne);
+}
+
+function componentMoveUp(e)
+{
+    let componentOriginal = e.target.parentElement.parentElement;
+    let componentSwapable = componentOriginal.previousElementSibling.previousElementSibling;
+    swap(componentOriginal, componentSwapable);
+}
+
+function componentMoveDown(e)
+{
+    let componentOriginal = e.target.parentElement.parentElement;
+    let componentSwapable = componentOriginal.nextElementSibling.nextElementSibling;
+    swap(componentOriginal, componentSwapable);
+}
+
 function generateElement(type, elem)
 {
     if (type === 'heading')
     {
         layout = `
-        <div class="heading">
+        <section class="heading component">
             <h2 class="heading-text editable-text"> Заголовок </h2>
             <p class="heading-post-text editable-text"> Подзаголовок </p>
             
             <div class="backing"></div>
             <img src="./../img/background.jpg">
-        </div>
+
+            <div class="controls">
+                <div class="up" onclick="componentMoveUp(event)"> выше </div>
+                <div class="down" onclick="componentMoveDown(event)"> ниже </div>
+            </div>
+        </section>
 
         ${draggableMarket}
         `;
