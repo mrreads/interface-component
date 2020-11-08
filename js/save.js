@@ -31,7 +31,10 @@ function save()
     {
         result.json().then(data => 
         {
-            console.log(data);     
+            if (data == 'save')
+            {
+                
+            }     
         });
     });
 
