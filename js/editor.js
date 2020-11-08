@@ -31,6 +31,8 @@ components.forEach(component =>
                 <div class="up" onclick="componentMoveUp(event)"> выше </div>
                 <div class="down" onclick="componentMoveDown(event)"> ниже </div>
             </div>
+
+            <div class="deleteButton" onclick="deleteComponent(event)"> Удалить </div>
         </section>
 
         ${draggableMarket}
@@ -38,6 +40,15 @@ components.forEach(component =>
         wrapper.innerHTML += layout;
     };
 });
+
+function deleteComponent(e)
+{
+    let element = e.target.parentElement;
+    element.previousElementSibling.remove();
+    element.remove();
+    
+}
+
 
 function allowDrop(e) 
 {
@@ -110,6 +121,8 @@ function generateElement(type, elem)
                 <div class="up" onclick="componentMoveUp(event)"> выше </div>
                 <div class="down" onclick="componentMoveDown(event)"> ниже </div>
             </div>
+
+            <div class="deleteButton" onclick="deleteComponent(event)"> Удалить </div>
         </section>
 
         ${draggableMarket}
