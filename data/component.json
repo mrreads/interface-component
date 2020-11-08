@@ -1,14 +1,1 @@
-[
-    {
-        "name": "heading",
-        "text": "Красивый изменяемый заголовок",
-        "post-text": "А это изменяемый текст заголовка, он чуть ниже. Именно так!",
-        "image-src": "./../upload/gori.jpg"
-    },
-    {
-        "name": "heading",
-        "text": "Вы хотите быть с нами?",
-        "post-text": "А это изменяемый текст заголовка, он чуть ниже. Именно так!",
-        "image-src": "./../upload/gori.jpg"
-    }
-]
+[{"name":"heading","text":"  Красивый изменяемый заголовок  ","post-text":"  А это изменяемый текст заголовка, он чуть ниже. Именно так!  ","image-src":"http://interface-component/upload/gori.jpg"},{"name":"heading","text":"  Заголовок  ","post-text":"  Подзаголовок  ","image-src":"http://interface-component/upload/gori.jpg"},{"name":"heading","text":" Заголовок ","post-text":" Подзаголовок ","image-src":"http://interface-component/img/background.jpg"},{"name":"heading","text":"  Вы хотите быть с нами?  ","post-text":"  А это изменяемый текст заголовка, он чуть ниже. Именно так!  ","image-src":"http://interface-component/upload/gori.jpg"}]
