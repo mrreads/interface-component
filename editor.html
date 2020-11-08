@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="./style/general.css">
     <link rel="stylesheet" href="./style/components.css">
     <script src="./js/editor.js" defer></script>
+    <script src="./js/save.js" defer></script>
     <style> body { overflow: hidden; } </style>
 </head>
 <body>
     <div id="editor">
-        <div id="draggable">
-            <div class="draggableComponent" draggable="true" ondragstart="drag(event)"
-            style="background-image: url('./img/components/heading.png')"
-            data-type="heading"></div>
+        <div id="draggableWrapper">
+            <div id="draggable">
+
+                <div class="draggableComponent" draggable="true" ondragstart="drag(event)"
+                style="background-image: url('./img/components/heading.png')"
+                data-type="heading"> </div>
+
+            </div>
+
+            <div class="save" onclick="save()"> Сохранить </div>
         </div>
 
         <div id="wrapper">
