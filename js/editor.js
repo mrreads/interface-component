@@ -32,7 +32,7 @@ components.forEach(component =>
                 <div class="down" onclick="componentMoveDown(event)"> ниже </div>
             </div>
 
-            <div class="imageUrlButton" onclick="changeUrlImage(event)"> ссылка на изображение </div>
+            <div class="imageUrlButton" onclick="changeUrlImage(event)" title="${component['image-src']}"> ссылка на изображение </div>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 
@@ -53,8 +53,13 @@ function deleteComponent(e)
 function changeUrlImage(e)
 {
     let component = e.target.parentElement;
-    let url = prompt("Укажите ссылку на изображение");
-    component.querySelector('img').src = url;
+    let url = prompt("Укажите ссылку на изображение:");
+    if (url)
+    {
+        component.querySelector('img').src = url;
+        component.querySelector('img').title = url;
+    }
+
 }
 
 function allowDrop(e) 
@@ -129,7 +134,7 @@ function generateElement(type, elem)
                 <div class="down" onclick="componentMoveDown(event)"> ниже </div>
             </div>
 
-            <div class="imageUrlButton" onclick="changeUrlImage(event)"> ссылка на изображение </div>
+            <div class="imageUrlButton" onclick="changeUrlImage(event)" title=""> ссылка на изображение </div>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 

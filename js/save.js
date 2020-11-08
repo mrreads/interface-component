@@ -33,7 +33,7 @@ function save()
         {
             if (data == 'save')
             {
-                
+                document.location.reload();
             }     
         });
     });
