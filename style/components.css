@@ -118,7 +118,7 @@
 	color: #FFFFFF;
 }
 
-.heading > img
+.heading > img, .link > img
 {
 	position: absolute;
 	z-index: -2;
@@ -129,7 +129,7 @@
 	height: 100%;
 }
 
-.heading > .backing
+.backing
 {
 	position: absolute;
 	z-index: -1;
@@ -239,4 +239,42 @@ h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[
 #wrapper section:last-of-type .down
 {
 	display: none !important;
+}
+
+.link
+{
+	position: relative;
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	flex-flow: column nowrap;
+	justify-content: center;
+
+	padding: 25px 50px;
+}
+
+.link .link-button
+{
+	padding: 15px 35px;
+
+	transition: 0.3s all;
+
+	background-color: rgba(0,0,0,0.4);
+	box-shadow: 3px 2px 5px rgba(0,0,0,0.2);
+	color: #FFFFFF;
+}
+
+.link .link-button:hover
+{
+	box-shadow: 7px 6px 10px rgba(0,0,0,0.3);
+}
+
+.component.heading
+{
+	min-height: 600px;
+}
+
+.component.link
+{
+	min-height: 250px;
 }

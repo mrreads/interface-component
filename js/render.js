@@ -23,7 +23,24 @@ components.forEach(component =>
         </div>
         `;
         wrapper.innerHTML += layout;
-    };
+    } else
+    if (component['name'] === 'button')
+    {
+        layout = `
+        <div class="link" style="background-color: ${component['color']} ">
 
+            <p class="link-text"> ${component['text']} </p>
+
+            <div style="position: relative; margin-top: 15px;">
+                <a href="${component['link']}" class="link-button"> ${component['button-text']} </a>
+            </div>
+
+            
+            <div class="backing"></div>
+            <img src="${component['image-src']}">
+        </div>
+        `;
+        wrapper.innerHTML += layout;
+    }
 
 });

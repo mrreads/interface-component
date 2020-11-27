@@ -40,10 +40,43 @@ components.forEach(component =>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 
-        ${draggableMarket}
-        `;
+        ${draggableMarket}`;
+
         wrapper.innerHTML += layout;
-    };
+    } 
+    else if (component['name'] === 'button')
+    {
+        layout = `
+        <div class="component link" style="background-color: ''">
+
+            <p class="link-text editable-text"> Обычный текст </p>
+
+            <div style="position: relative; margin-top: 15px;">
+                <a href="#" class="link-button editable-text"> Текст ссылки </a>
+            </div>
+
+            
+            <div class="backing"></div>
+            <img src="./../img/background.jpg">
+
+            
+            <div class="controls">
+                <div class="up" onclick="componentMoveUp(event)"> выше </div>
+                <div class="down" onclick="componentMoveDown(event)"> ниже </div>
+            </div>
+
+            <div class="imageUrlButton" onclick="changeUrlImage(event)" title="${component['image-src']}"> ссылка на изображение </div>
+            
+            <label class="imageBackgroundColor"> изменить цвет
+                <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
+            </label>
+            <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
+
+        </div>
+        ${draggableMarket}`;
+
+        wrapper.innerHTML += layout;
+    }
 });
 
 function deleteComponent(e)
@@ -158,8 +191,37 @@ function generateElement(type, elem)
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 
-        ${draggableMarket}
-        `;
+        ${draggableMarket}`;
         elem.insertAdjacentHTML('afterend', layout)
-    };
+    } 
+    else if (type === 'button')
+    {
+        layout = `
+        <div class="component link" style="background-color: ''">
+
+            <p class="link-text editable-text"> Обычный текст </p>
+
+            <div style="position: relative; margin-top: 15px;">
+                <a href="#" class="link-button editable-text"> Текст ссылки </a>
+            </div>
+
+            
+            <div class="backing"></div>
+            <img src="./../img/background.jpg">
+
+            <div class="controls">
+                <div class="up" onclick="componentMoveUp(event)"> выше </div>
+                <div class="down" onclick="componentMoveDown(event)"> ниже </div>
+            </div>
+
+            <div class="imageUrlButton" onclick="changeUrlImage(event)" title="${component['image-src']}"> ссылка на изображение </div>
+            
+            <label class="imageBackgroundColor"> изменить цвет
+                <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
+            </label>
+            <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
+            </div>
+            ${draggableMarket}`;
+            elem.insertAdjacentHTML('afterend', layout)
+    }
 }

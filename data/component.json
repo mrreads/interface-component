@@ -1,1 +1,17 @@
-[{"name":"heading","text":"     Заголовывапок     ","post-text":"     Подзаголовок     ","image-src":"http://interface-component/editor.html","color":"rgb(159, 9, 9)"}]
+[
+  {
+    "name": "heading",
+    "text": "     Заголовывапок     ",
+    "post-text": "     Подзаголовок     ",
+    "image-src": "",
+    "color": "rgb(159, 9, 9)"
+  },
+  {
+    "name": "button",
+    "text": "     Заголовывапок",
+    "button-text": "текст",
+    "link": "#",
+    "image-src": "",
+    "color": "rgb(139, 123, 9)"
+  }
+]
