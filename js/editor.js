@@ -44,16 +44,15 @@ components.forEach(component =>
 
         wrapper.innerHTML += layout;
     } 
-    else if (component['name'] === 'button')
+    else if (component['name'] === 'link')
     {
         layout = `
         <div class="component link" style="background-color: ''">
 
-            <p class="link-text editable-text"> Обычный текст </p>
+            <p class="link-text editable-text"> ${component['text']} </p>
 
-            <div style="position: relative; margin-top: 15px;">
-                <a href="#" class="link-button editable-text"> Текст ссылки </a>
-            </div>
+            <a href="${component['link']}" title="${component['link']}" class="link-button editable-text" onclick="event.preventDefault();"> ${component['button-text']} </a>
+
 
             
             <div class="backing"></div>
@@ -70,6 +69,9 @@ components.forEach(component =>
             <label class="imageBackgroundColor"> изменить цвет
                 <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
             </label>
+
+            <div class="changeLinkUrl" onclick="changeLinkUrl(event)" title="${component['link']}"> изменить ссылку кнопки </div>
+
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
 
         </div>
@@ -111,6 +113,17 @@ function changeBackgroundColor(e)
     component.querySelector('img').style.display = 'none';
 }
 
+function changeLinkUrl(e)
+{
+    let component = e.target.parentElement;
+    let url = prompt("Укажите ссылку для кнопки:");
+    if (url)
+    {
+        component.querySelector('.link-button').href = url;
+        component.querySelector('.link-button').title = url;
+    }
+}
+
 function allowDrop(e) 
 {
     e.preventDefault();
@@ -137,7 +150,7 @@ document.addEventListener('click', (e) =>
 let currentEditableElement;
 document.addEventListener('dblclick', (e) =>
 {
-    if (e.target.classList.entries('editable-text'))
+    if (e.target.classList.entries('editable-text') && e.target.classList.value != 'draggableMarker')
     {
         currentEditableElement = e.target;
         e.target.contentEditable = true;
@@ -194,16 +207,14 @@ function generateElement(type, elem)
         ${draggableMarket}`;
         elem.insertAdjacentHTML('afterend', layout)
     } 
-    else if (type === 'button')
+    else if (type === 'link')
     {
         layout = `
         <div class="component link" style="background-color: ''">
 
             <p class="link-text editable-text"> Обычный текст </p>
 
-            <div style="position: relative; margin-top: 15px;">
-                <a href="#" class="link-button editable-text"> Текст ссылки </a>
-            </div>
+            <a href="#" title="" class="link-button editable-text" onclick="event.preventDefault();"> Текст ссылки </a>
 
             
             <div class="backing"></div>
@@ -214,13 +225,16 @@ function generateElement(type, elem)
                 <div class="down" onclick="componentMoveDown(event)"> ниже </div>
             </div>
 
-            <div class="imageUrlButton" onclick="changeUrlImage(event)" title="${component['image-src']}"> ссылка на изображение </div>
+            <div class="imageUrlButton" onclick="changeUrlImage(event)" title=""> ссылка на изображение </div>
             
             <label class="imageBackgroundColor"> изменить цвет
                 <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
             </label>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
-            </div>
+        
+            <div class="changeLinkUrl" onclick="changeLinkUrl(event)" title="#"> изменить ссылку кнопки </div>
+        </div>
+
             ${draggableMarket}`;
             elem.insertAdjacentHTML('afterend', layout)
     }

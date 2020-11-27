@@ -7,10 +7,10 @@
     "color": "rgb(159, 9, 9)"
   },
   {
-    "name": "button",
+    "name": "link",
     "text": "     Заголовывапок",
     "button-text": "текст",
-    "link": "#",
+    "link": "/ya.ru",
     "image-src": "",
     "color": "rgb(139, 123, 9)"
   }

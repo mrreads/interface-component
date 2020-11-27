@@ -24,7 +24,7 @@ components.forEach(component =>
         `;
         wrapper.innerHTML += layout;
     } else
-    if (component['name'] === 'button')
+    if (component['name'] === 'link')
     {
         layout = `
         <div class="link" style="background-color: ${component['color']} ">
