@@ -257,11 +257,18 @@ h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[
 	flex-flow: column nowrap;
 	justify-content: center;
 
-	padding: 25px 50px;
+	padding: 55px 50px;
+}
+
+.link p
+{
+	font-size: 24px;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .link .link-button
 {
+	font-size: 18px;
 	padding: 15px 35px;
 	margin-top: 25px;
 	transition: 0.3s all;

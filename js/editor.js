@@ -47,7 +47,7 @@ components.forEach(component =>
     else if (component['name'] === 'link')
     {
         layout = `
-        <div class="component link" style="background-color: ''">
+        <div class="component link" style="background-color: ${component['color']}">
 
             <p class="link-text editable-text"> ${component['text']} </p>
 
@@ -56,7 +56,7 @@ components.forEach(component =>
 
             
             <div class="backing"></div>
-            <img src="./../img/background.jpg">
+            <img src="${component['image-src']}">
 
             
             <div class="controls">

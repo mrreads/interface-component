@@ -32,7 +32,7 @@ components.forEach(component =>
             <p class="link-text"> ${component['text']} </p>
 
             <div style="position: relative; margin-top: 15px;">
-                <a href="${component['link']}" class="link-button"> ${component['button-text']} </a>
+                <a href="${component['link']}" class="link-button" target="_blank"> ${component['button-text']} </a>
             </div>
 
             

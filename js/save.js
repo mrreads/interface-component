@@ -16,6 +16,19 @@ function save()
                 "color": component.style.backgroundColor
             };
             jsonWithComponent.push(jsonToAdd);
+        } else
+        if (component.classList.contains('link'))
+        {
+            let jsonToAdd = 
+            {
+                "name": "link",
+                "text": component.querySelector('.link-text').textContent,
+                "button-text": component.querySelector('.link-button').textContent,
+                "link": component.querySelector('.link-button').href,
+                "image-src": component.querySelector('img').src,
+                "color": component.style.backgroundColor,
+            };
+            jsonWithComponent.push(jsonToAdd);
         }
     });
 
