@@ -45,6 +45,7 @@
 }
 
 
+
 .save
 {
 	position: absolute;
@@ -149,6 +150,8 @@
 	width: 100%;
 	margin-bottom: 15px;
 	padding: 5px 15px;
+
+	text-shadow: 3px 2px 5px rgba(0,0,0,0.2);
 }
 
 .heading > .heading-post-text
@@ -156,6 +159,8 @@
 	font-size: 2vmin;
 
 	padding: 5px 15px;
+
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width: 768px)
@@ -184,7 +189,7 @@ h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[
 	left: 15px;
 }
 
-.controls > div, .deleteButton, .imageUrlButton
+.controls > div, .deleteButton, .imageUrlButton, .imageBackgroundColor
 {
 	margin-top: 5px;
 	padding: 8px;
@@ -199,10 +204,11 @@ h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[
 
 .deleteButton
 {
-	opacity: 0.4;
 	position: absolute;
 	top: 10px;
 	right: 15px;
+
+	opacity: 0.4;
 }
 
 .imageUrlButton
@@ -212,7 +218,14 @@ h1[contentEditable=true], h2[contentEditable=true], h3[contentEditable=true], p[
 	left: 15px;
 }
 
-.controls > div:hover, .deleteButton:hover, .imageUrlButton:hover
+.imageBackgroundColor
+{
+	position: absolute;
+	top: 55px;
+	left: 15px;
+}
+
+.controls > div:hover, .deleteButton:hover, .imageUrlButton:hover, .imageBackgroundColor:hover
 {
 	opacity: 0.8;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);

@@ -14,7 +14,7 @@ components.forEach(component =>
     if (component['name'] === 'heading')
     {
         layout = `
-        <div class="heading">
+        <div class="heading" style="background-color: ${component['color']} ">
             <h2 class="heading-text"> ${component['text']} </h2>
             <p class="heading-post-text"> ${component['post-text']} </p>
             

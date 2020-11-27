@@ -12,7 +12,8 @@ function save()
                 "name": "heading",
                 "text": component.querySelector('.heading-text').textContent,
                 "post-text": component.querySelector('.heading-post-text').textContent,
-                "image-src": component.querySelector('img').src
+                "image-src": component.querySelector('img').src,
+                "color": component.style.backgroundColor
             };
             jsonWithComponent.push(jsonToAdd);
         }
@@ -33,7 +34,7 @@ function save()
         {
             if (data == 'save')
             {
-                document.location.reload();
+                document.location.reload(true);
             }     
         });
     });

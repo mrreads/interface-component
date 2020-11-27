@@ -20,12 +20,12 @@ components.forEach(component =>
     if (component['name'] === 'heading')
     {
         layout = `
-        <section class="component heading">
+        <section class="component heading" style="background-color: ${component['color']}">
             <h2 class="heading-text editable-text"> ${component['text']} </h2>
             <p class="heading-post-text editable-text"> ${component['post-text']} </p>
             
             <div class="backing"></div>
-            <img src="${component['image-src']}">
+            <img src="${component['image-src']}" alt="">
 
             <div class="controls">
                 <div class="up" onclick="componentMoveUp(event)"> выше </div>
@@ -33,6 +33,10 @@ components.forEach(component =>
             </div>
 
             <div class="imageUrlButton" onclick="changeUrlImage(event)" title="${component['image-src']}"> ссылка на изображение </div>
+            
+            <label class="imageBackgroundColor"> изменить цвет
+                <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
+            </label>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 
@@ -56,10 +60,22 @@ function changeUrlImage(e)
     let url = prompt("Укажите ссылку на изображение:");
     if (url)
     {
+        component.style.backgroundColor = 'unset';
+        component.querySelector('img').removeAttribute('background-color');
         component.querySelector('img').src = url;
         component.querySelector('img').title = url;
+        component.querySelector('img').style.display = 'block';
     }
+}
 
+function changeBackgroundColor(e)
+{
+    let component = e.target.parentElement.parentElement;
+    let color = e.target.value;
+    component.style.backgroundColor = color;
+    component.querySelector('img').src = '';
+    component.querySelector('img').title = color;
+    component.querySelector('img').style.display = 'none';
 }
 
 function allowDrop(e) 
@@ -122,7 +138,7 @@ function generateElement(type, elem)
     if (type === 'heading')
     {
         layout = `
-        <section class="heading component">
+        <section class="heading component" style="background-color: ''">
             <h2 class="heading-text editable-text"> Заголовок </h2>
             <p class="heading-post-text editable-text"> Подзаголовок </p>
             
@@ -135,6 +151,10 @@ function generateElement(type, elem)
             </div>
 
             <div class="imageUrlButton" onclick="changeUrlImage(event)" title=""> ссылка на изображение </div>
+            
+            <label class="imageBackgroundColor"> изменить цвет
+                <input type="color" oninput="changeBackgroundColor(event)" style="visibility: hidden; width: 1px">
+            </label>
             <div class="deleteButton" onclick="deleteComponent(event)"> удалить </div>
         </section>
 
